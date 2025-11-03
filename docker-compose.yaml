@@ -3,14 +3,13 @@ services:
     image: node_boilerplate:latest
     container_name: node_boilerplate
     restart: always
-    ports:
-      - "6060:3000"
-    environment:
-      - NODE_ENV=production
     networks:
       - webproxy
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
 
 networks:
   webproxy:
-    external: true
-
+    external: true 
